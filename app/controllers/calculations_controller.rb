@@ -18,7 +18,7 @@ class CalculationsController < ApplicationController
 
     @word_count = @text.count(" ") + 1
 
-    @occurrences = @text.count(@special_word)
+    @occurrences = @text.scan(@special_word).length
 
     # ================================================================================
     # Your code goes above.
@@ -114,7 +114,7 @@ class CalculationsController < ApplicationController
 
     @standard_deviation = @variance ** 0.5
 
-    @mode = "Replace this string with your answer."
+    @mode = 
 
     # ================================================================================
     # Your code goes above.
