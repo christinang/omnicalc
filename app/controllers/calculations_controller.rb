@@ -114,7 +114,17 @@ class CalculationsController < ApplicationController
 
     @standard_deviation = @variance ** 0.5
 
-    @mode = 
+    @most_frequent_num_count = 0
+
+
+    @sorted_numbers.each do |num|
+      if @sorted_numbers.count(num) > @most_frequent_num_count
+        @most_frequent_num_count = @sorted_numbers.count(num)
+        @most_frequent_num = num
+      end
+    end
+
+    @mode = @most_frequent_num
 
     # ================================================================================
     # Your code goes above.
